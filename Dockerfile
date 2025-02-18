@@ -28,7 +28,7 @@ COPY --from=build /app/build ./build
 COPY server.js .
 
 # Expose port 5000
-EXPOSE 5000
+EXPOSE 3000
 
 # Jalankan server
 CMD ["npm", "run", "server"]
