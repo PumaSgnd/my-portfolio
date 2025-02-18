@@ -11,8 +11,7 @@
     "nodemailer": "^6.10.0",
     "pg": "^8.13.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "latest"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
@@ -40,6 +39,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "react-scripts": "^5.0.1"
   }
 }
