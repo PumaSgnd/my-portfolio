@@ -3,27 +3,32 @@ FROM node:18 AS build
 
 WORKDIR /app
 
-# Copy dan install dependencies untuk client
+# Salin file package.json & package-lock.json (jika ada) dan install dependencies
 COPY package*.json ./
 RUN npm install
 
-# Copy seluruh source code dan build React client
-COPY . .
-RUN npm run build
+# Perbaiki izin file (hindari permission denied)
+RUN chmod -R 755 /app
+
+# Salin seluruh source code dan build React client
+COPY . . 
+RUN npm install -g react-scripts && npm run build
 
 # Stage 2: Run Express Server
 FROM node:18
 
 WORKDIR /app
 
-# Copy hanya yang diperlukan untuk server
+# Salin package.json & install dependencies untuk production
 COPY package*.json ./
 RUN npm install --only=production
 
-# Copy build React ke folder server (sesuai path di Express)
+# Salin hasil build dari stage pertama
 COPY --from=build /app/build ./build
 COPY server.js .
 
-# Expose port dan jalankan server
+# Expose port 5000
 EXPOSE 5000
+
+# Jalankan server
 CMD ["npm", "run", "server"]
