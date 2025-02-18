@@ -6,7 +6,7 @@ const { Pool } = require("pg");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -48,6 +48,10 @@ app.post("/contact", async (req, res) => {
     console.error("Error:", error);
     res.status(500).json({ error: "Terjadi kesalahan saat mengirim pesan." });
   }
+});
+
+app.get("/", (req, res) => {
+  res.send("Server is running! 🚀");
 });
 
 app.listen(port, () => {
