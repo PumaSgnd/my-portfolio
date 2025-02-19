@@ -4,6 +4,8 @@ import "../css/contact.css";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState(""); 
+  const [modalType, setModalType] = useState("success"); 
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -22,18 +24,21 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setTimeout(() => {
-          setLoading(false);
-          setShowModal(true);
-          setFormData({ name: "", email: "", message: "" });
-        }, 2000);
+        setModalType("success");
+        setModalMessage("Pesan berhasil dikirim dan disimpan!");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        setLoading(false);
-        alert("Terjadi kesalahan!");
+        setModalType("error");
+        setModalMessage("Terjadi kesalahan saat mengirim pesan.");
       }
     } catch (error) {
-      setLoading(false);
       console.error("Error:", error);
+      setModalType("error");
+      setModalMessage("Terjadi kesalahan jaringan. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
+      setShowModal(true);
+      setTimeout(() => setShowModal(false), 7000);
     }
   };
 
@@ -61,9 +66,13 @@ const Contact = () => {
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-container">
-            <i className="fas fa-check-circle success-icon"></i>
+            {modalType === "success" ? (
+              <i className="fas fa-check-circle success-icon"></i>
+            ) : (
+              <i className="fas fa-times-circle error-icon"></i>
+            )}
             <h3>Notifikasi</h3>
-            <p>Pesan berhasil dikirim dan disimpan!</p>
+            <p>{modalMessage}</p>
             <button onClick={() => setShowModal(false)}>Oke</button>
           </div>
         </div>
