@@ -72,43 +72,58 @@
 
 @media (max-width: 768px) {
   #projects h2 {
-    padding-top: 30px;
+    padding-top: 20px;
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .projects-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
     padding: 10px 20px;
-    scroll-padding: 10px 20px;
     -webkit-overflow-scrolling: touch;
   }
 
   .project-card {
-    flex: 0 0 60%;
-    min-width: 60%;
-    margin-right: 20px;
+    flex: 0 0 80%;
+    min-width: 80%;
+    margin-right: 15px;
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: start;
+    background-color: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
   }
 
+  .project-card:last-child {
+    margin-right: 0; /* Hindari ruang kosong setelah kartu terakhir */
+  }
+
   .project-card h3 {
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .project-card p {
     font-size: 13px;
-    height: auto;
     -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .project-link {
+    font-size: 14px;
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
   }
 
   .projects-container::-webkit-scrollbar {
-    display: none; /* Hilangkan scrollbar */
+    display: none;
   }
 }
