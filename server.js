@@ -29,22 +29,26 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Contact form endpoint
 app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
-    await pool.query("INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)", [name, email, message]);
+    await pool.query(
+      "INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)",
+      [name, email, message]
+    );
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "bomavan12@gmail.com",
+      to: "bomavan12@gmail.com", // Replace with your email
       subject: "Pesan Baru dari Website Portfolio Anda",
       text: `Nama: ${name}\nEmail: ${email}\nPesan: ${message}`,
     };
 
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ message: "Pesan berhasil dikirim!" });
+    res.status(200).json({ message: "Pesan berhasil dikirim dan disimpan!" });
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Terjadi kesalahan saat mengirim pesan." });
@@ -52,6 +56,7 @@ app.post("/contact", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "build")));
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
