@@ -72,9 +72,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    gap: 15px;
-    padding-left: 20px;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 20px;
     scroll-padding-left: 200px;
     -webkit-overflow-scrolling: touch;
   }
