@@ -143,3 +143,34 @@
     color: #f44336;
     margin-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+    #contact h2 {
+        padding-top: 30px; /* Kurangi padding untuk layar kecil */
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    #contact form {
+        width: 90%; /* Pastikan form tidak terlalu besar */
+    }
+
+    #contact form input,
+    #contact form textarea {
+        width: 100%; /* Hindari input yang meluber */
+        font-size: 14px; /* Ukuran font yang nyaman di mobile */
+    }
+
+    #contact form button {
+        width: 100%; /* Tombol lebih lebar untuk sentuhan lebih mudah */
+    }
+
+    .modal-container {
+        padding: 15px; /* Kurangi padding di modal */
+        width: 90%; /* Modal tidak memenuhi layar sepenuhnya */
+    }
+
+    .success-icon,
+    .error-icon {
+        font-size: 70px; /* Ikon lebih kecil di layar kecil */
+    }
+}
