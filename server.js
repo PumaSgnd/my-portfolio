@@ -64,7 +64,7 @@ app.get("/test-db", async (req, res) => {
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "..public/index.html"));
 });
 
 app.listen(port, () => {
