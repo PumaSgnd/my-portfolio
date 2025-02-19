@@ -92,7 +92,7 @@
     min-width: 70%;
     padding: 15px;
     border-radius: 10px;
-    scroll-snap-align: center;
+    scroll-snap-align: left;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
   }
