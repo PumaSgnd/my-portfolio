@@ -51,7 +51,17 @@ app.post("/contact", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Server is running! 🚀");
+  res.send("Server is running! 🚀 API is ready to receive requests.");
+});
+
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ success: true, time: result.rows[0].now });
+  } catch (error) {
+    console.error("Database error:", error);
+    res.status(500).json({ success: false, error: error.message });
+  }
 });
 
 app.listen(port, () => {
