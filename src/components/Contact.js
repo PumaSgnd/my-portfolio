@@ -38,7 +38,6 @@ const Contact = () => {
     } finally {
       setLoading(false);
       setShowModal(true);
-      setTimeout(() => setShowModal(false), 7000);
     }
   };
 
