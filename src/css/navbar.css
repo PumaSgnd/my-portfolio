@@ -48,9 +48,7 @@
 /* ====== Responsive Styles ====== */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
+    padding: 10px 15px;
   }
 
   .navbar-logo img {
@@ -62,7 +60,7 @@
   }
 
   .navbar-menu li a {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
 }
 
