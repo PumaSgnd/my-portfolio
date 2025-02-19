@@ -54,18 +54,15 @@
   }
 
   .navbar-logo img {
-    height: 40px;
+    height: 30px;
   }
 
   .navbar-menu {
-    flex-direction: column;
     gap: 20px;
-    width: 100%;
-    margin-top: 10px;
   }
 
   .navbar-menu li a {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 }
 
