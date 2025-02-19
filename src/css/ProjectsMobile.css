@@ -60,3 +60,46 @@
 .projectsmobile-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  #projectsmobile h2 {
+    padding-top: 30px; /* Kurangi padding heading untuk layar kecil */
+    font-size: 1.2rem; /* Perkecil ukuran font heading */
+  }
+
+  .projectsmobile-container {
+    padding: 10px 15px; /* Kurangi padding samping */
+    gap: 15px; /* Kurangi jarak antar kartu */
+  }
+
+  .projectsmobile-card {
+    width: 160px; /* Lebar kartu lebih kecil untuk tablet dan smartphone */
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  .projectsmobile-card h3 {
+    font-size: 16px; /* Ukuran font heading sedikit lebih kecil */
+  }
+
+  .projectsmobile-card p {
+    font-size: 13px; /* Perkecil font paragraf */
+    height: 4em; /* Kurangi tinggi teks untuk proporsi lebih baik */
+    -webkit-line-clamp: 2; /* Batasi menjadi 2 baris untuk menghemat ruang */
+  }
+}
+
+@media (max-width: 480px) {
+  .projectsmobile-card {
+    width: 140px; /* Lebih kecil lagi untuk smartphone kecil */
+    padding: 10px;
+  }
+
+  .projectsmobile-card h3 {
+    font-size: 14px;
+  }
+
+  .projectsmobile-card p {
+    font-size: 12px;
+  }
+}
