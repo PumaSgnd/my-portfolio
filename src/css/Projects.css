@@ -69,3 +69,45 @@
 .project-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  #projects h2 {
+    padding-top: 30px; /* Kurangi padding untuk layar kecil */
+    font-size: 1.2rem; /* Ukuran heading lebih kecil */
+  }
+
+  .projects-container {
+    padding: 10px 15px; /* Kurangi padding samping */
+    gap: 15px; /* Jarak antar kartu lebih kecil */
+  }
+
+  .project-card {
+    width: 160px; /* Lebar kartu lebih kecil di mobile */
+    min-height: 140px;
+    padding: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 16px; /* Ukuran font heading lebih kecil */
+  }
+
+  .project-card p {
+    font-size: 13px; /* Ukuran font paragraf lebih kecil */
+    height: 4em; /* Kurangi tinggi teks untuk kesesuaian */
+    -webkit-line-clamp: 2; /* Kurangi jumlah baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 140px; /* Lebih kecil lagi untuk layar sangat kecil */
+  }
+
+  .project-card h3 {
+    font-size: 14px;
+  }
+
+  .project-card p {
+    font-size: 12px;
+  }
+}
