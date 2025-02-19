@@ -89,7 +89,7 @@
 
   .project-card {
     flex: 0 0 70%;
-    min-width: 100%;
+    min-width: 70%;
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: center;
