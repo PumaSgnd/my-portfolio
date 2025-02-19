@@ -77,18 +77,19 @@
   }
 
   .projects-container {
-    padding: 10px 0;
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
     gap: 15px;
-    scroll-snap-type: x mandatory;
+    padding: 10px 0;
     -webkit-overflow-scrolling: touch;
   }
 
   .project-card {
-    flex: 0 0 90%;
-    min-width: 90%;
+    flex: 0 0 70%;
+    min-width: 100%;
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: center;
