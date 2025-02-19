@@ -17,7 +17,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+      const response = await fetch("https://portfolio-boma.up.railway.app/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
