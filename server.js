@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const { Pool } = require("pg");
 const nodemailer = require("nodemailer");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -50,10 +51,6 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("Server is running! 🚀 API is ready to receive requests.");
-});
-
 app.get("/test-db", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
@@ -62,6 +59,12 @@ app.get("/test-db", async (req, res) => {
     console.error("Database error:", error);
     res.status(500).json({ success: false, error: error.message });
   }
+});
+
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 app.listen(port, () => {
