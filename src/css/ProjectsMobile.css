@@ -72,16 +72,16 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto; 
-    scroll-snap-type: x mandatory;
-    gap: 20px;
+    scroll-snap-type: x mandatory; 
     padding: 10px 20px;
-    scroll-padding: 0 20px;
+    scroll-padding: 10px 20px;
     -webkit-overflow-scrolling: touch;
   }
 
   .projectsmobile-card {
-    flex: 0 0 70%;
-    min-width: 70%;
+    flex: 0 0 100%;
+    min-width: 80%;
+    margin-right: 20px;
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: start;
