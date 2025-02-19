@@ -48,7 +48,7 @@ app.post("/contact", async (req, res) => {
 
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ message: "Pesan berhasil dikirim dan disimpan!" });
+    res.status(200).json({ message: "Pesan berhasil dikirim!" });
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Terjadi kesalahan saat mengirim pesan." });
