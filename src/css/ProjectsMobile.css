@@ -73,7 +73,9 @@
     flex-wrap: nowrap;
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
-    gap: 15px; 
+    gap: 15px;
+    padding-left: 20px;
+    scroll-padding-left: 20px;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -82,7 +84,7 @@
     min-width: 70%;
     padding: 15px;
     border-radius: 10px;
-    scroll-snap-align: left;
+    scroll-snap-align: start;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
   }
