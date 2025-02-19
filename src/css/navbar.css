@@ -1,1 +1,71 @@
+/* ====== Default Styles ====== */
+.navbar {
+  background: #333;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+/* Menu Navigasi */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #ffcc00;
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-menu li a {
+    font-size: 0.9rem;
+  }
+}
 
