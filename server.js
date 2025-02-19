@@ -51,19 +51,9 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.get("/test-db", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.json({ success: true, time: result.rows[0].now });
-  } catch (error) {
-    console.error("Database error:", error);
-    res.status(500).json({ success: false, error: error.message });
-  }
-});
-
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.use(express.static(path.join(__dirname, "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(port, () => {
