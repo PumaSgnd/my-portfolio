@@ -166,7 +166,7 @@
 
     .modal-container {
         padding: 15px; /* Kurangi padding di modal */
-        width: 90%; /* Modal tidak memenuhi layar sepenuhnya */
+        width: 80%; /* Modal tidak memenuhi layar sepenuhnya */
     }
 
     .success-icon,
