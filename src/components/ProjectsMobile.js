@@ -13,11 +13,13 @@ const ProjectsMobile = () => {
     <section id="projectsmobile">
       <h2>Proyek Mobile</h2>
       <div className="projectsmobile-container">
-        {projectsmobile.map((project) => (
-          <div className="projectsmobile-card" key={project.id}>
+        {projectsmobile.map((project, index) => (
+          <div className="projectsmobile-card" key={index}>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a href={project.link} className="projectsmobile-link">Lihat Proyek</a>
+            <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+              Lihat Proyek
+            </a>
           </div>
         ))}
       </div>
