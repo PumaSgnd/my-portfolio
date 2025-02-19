@@ -90,10 +90,6 @@
     transition: transform 0.2s ease-in-out;
   }
 
-  .project-card:last-child {
-    margin-right: 0;
-  }
-
   .projectsmobile-card h3 {
     font-size: 16px;
     margin-bottom: 10px;
@@ -105,13 +101,6 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .project-link {
-    font-size: 14px;
-    color: blue;
-    font-weight: bold;
-    text-decoration: none;
   }
   
   .projects-container::-webkit-scrollbar {
