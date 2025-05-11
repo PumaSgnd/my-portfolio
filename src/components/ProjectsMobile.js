@@ -7,7 +7,7 @@ const projectsmobile = [
   { title: "CCNI", description: "Aplikasi berbasis Flutter yang berfungsi untuk membantu dalam manajemen kolestrol pengguna.", link: "https://github.com/PumaSgnd/CCNI" },
   { title: "News App", description: "Aplikasi berbasis Flutter yang berfungsi untuk membantu pengguna dalam mencari berita internasional.", link: "https://github.com/PumaSgnd/News-Apps" },
   { title: "Buzz App", description: "UI Aplikasi berbasis Flutter yang berfungsi untuk membantu pengguna dalam memonitoring grup kerja.", link: "https://github.com/PumaSgnd/Mobile" },
-  { title: "Buzz App", description: "UI Aplikasi berbasis Flutter yang berfungsi untuk membantu pengguna perangkat berbasis IoT.", link: "https://github.com/PumaSgnd/Mobile" },
+  { title: "Emo App", description: "UI Aplikasi berbasis Flutter yang berfungsi untuk membantu pengguna perangkat berbasis IoT.", link: "https://github.com/PumaSgnd/Mobile" },
 ];
 
 const ProjectsMobile = () => {
